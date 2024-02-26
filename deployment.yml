@@ -1,0 +1,20 @@
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: todo-k8s
+  spec:
+    selector:
+      matchLabels:
+        app: todo-k8s
+    replicas: 2
+    template:
+      metadata:
+        labels:
+          app: todo-k8s
+      spec:
+        containers:
+          - name: todo-k8s
+            image: todo-k8s-image:latest
+            imagePullPolicy: IfNotPresent
+            ports:
+              - containerPort: 8080
