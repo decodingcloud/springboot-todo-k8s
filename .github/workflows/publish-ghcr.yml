@@ -15,8 +15,8 @@ jobs:
           java-version: 17
           distribtion: "corretto"
 
-      - name: Setup Maven
-        uses: stCarolas/setup-maven@4.4
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v5
         with:
           maven-version: 3.8.2
 
