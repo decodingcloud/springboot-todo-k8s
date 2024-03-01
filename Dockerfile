@@ -8,7 +8,7 @@ RUN apk --no-cache add curl
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY target/TODO-0.0.1-SNAPSHOT.jar /app/TODO-0.0.1-SNAPSHOT.jar
+COPY target/todo-k8s-0.0.1-SNAPSHOT.jar /app/todo-k8s-0.0.1-SNAPSHOT.jar
 
 # Expose the port that your application runs on
 EXPOSE 8080
