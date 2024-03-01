@@ -6,7 +6,7 @@ jobs:
   build_and_publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkoput@v3
+      - uses: actions/checkout@v3
       - name: Build and Push the Image
         run:
           docker login --username decodingcloud --password ${{secrets.GHCR_PAT}} ghcr.io
