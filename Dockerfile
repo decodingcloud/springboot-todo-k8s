@@ -14,4 +14,4 @@ COPY target/todo-k8s-0.0.1-SNAPSHOT.jar /app/todo-k8s-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
 
 # Define the command to run your application
-CMD ["java", "-jar", "TODO-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "todo-k8s-0.0.1-SNAPSHOT.jar"]
