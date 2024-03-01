@@ -1,0 +1,16 @@
+name:  Docker Image CI for GHCR
+
+on:
+  push
+
+jobs:
+  build_and_publish:
+    runs-on:ubuntu-latest
+    steps:
+      - uses: actions/checkoput@v3
+      - name: Build and Push the Image
+        run:
+          docker login --username decodingcloud --password ${{secrets.GHCR_PAT}} ghcr.io
+          docker build . --tag ghcr.io/decodingcloud/todo-k8s:latest
+          docker push ghcr.io/decodingcloud/todo-k8s:latest
+
