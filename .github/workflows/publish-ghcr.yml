@@ -6,7 +6,23 @@ jobs:
   build_and_publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribtion: "corretto"
+
+      - name: Setup Maven
+        uses: stCarolas/setup-maven@4.4
+        with:
+          maven-version: 3.8.2
+
+      - name: Build Jar
+        run: mvn clean package -DskipTests=true
+
       - name: Build and Push the Image
         run: |
           docker login --username decodingcloud --password ${{secrets.GHCR_PAT}} ghcr.io
